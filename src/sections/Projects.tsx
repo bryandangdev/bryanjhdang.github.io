@@ -13,24 +13,26 @@ interface ProjectInfo {
 
 function Project({ project }: { project: ProjectInfo }) {
   return (
-    <a href={project.projectLink} target="_blank">
-      <div className="group flex sm:flex-row flex-col gap-10 p-6 border rounded-md shadow hover:shadow-lg bg-white" >
+    <div>
+      <div className="group flex sm:flex-row flex-col gap-10 py-8" >
+        
         
         <div className="basis-1/4">
           <img src={project.imageLink} alt={project.name} className="w-full object-cover" />
         </div>
 
         <div className="flex-1">
-          
+
+            {/* Title */}
           <div className="pb-4">
-            <p className="text-xl font-semibold pb-4">{project.name}</p>
-            <p className="text-base">{project.description}</p> 
+            <a href={project.projectLink} target="_blank" className="text-xl font-semibold link">{project.name}</a>
+            <p className="pt-2 text-base">{project.description}</p> 
           </div>
 
           <div className="flex flex-row flex-wrap gap-2 pb-4">
-            <p className="badge badge-primary badge-outline">{project.type}</p>
+            <p className="badge badge-outline">{project.type}</p>
             {project.tags.map((element, index) => (
-              <p key={index} className="badge badge-secondary badge-outline">{element}</p>
+              <p key={index} className="badge badge-outline">{element}</p>
             ))}
           </div>
 
@@ -49,7 +51,7 @@ function Project({ project }: { project: ProjectInfo }) {
         
         </div>
       </div>
-    </a>
+    </div>
   )
 }
 
@@ -57,7 +59,7 @@ function Project({ project }: { project: ProjectInfo }) {
 export default function Projects() {
   return (
     <div id="projects" className="pt-20 pb-20 border-none">
-      <SectionTitle title="PROJECTS" />
+      <SectionTitle title="Some Projects" />
       <div className="grid grid-cols-1 gap-10">
         {projectData.map((project, index) => (
           <Project key={index} project={project} />

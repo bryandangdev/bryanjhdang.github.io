@@ -6,18 +6,25 @@ export default function About() {
     <div id="about" className="pt-20 pb-20 border-none">
       <div className="flex flex-col lg:flex-row">
         <div className="sm:mr-20 text-base space-y-4">
-          <SectionTitle title="ABOUT" />
+          <SectionTitle title="About Me" />
           <p>
-            Based in Vancouver, I'm currently doing a Computer Science degree at SFU! You can get in touch with me through <a className="link" href="mailto:bda37@sfu.ca">email</a> or <a className="link" href="https://www.linkedin.com/in/bryanjhdang/" target="_blank">LinkedIn</a>.
-          </p>
-          <p>
+            I'm currently doing a Computer Science degree at SFU!
+          
+          
             Sometimes <a className="link" href="https://bryandang.substack.com/" target="_blank">I like to blog about stuff</a>, usually game reviews and random media.
           </p>
           <p>
-            My hobbies include playing both virtual and tabletop games, reading, and binge watching camping and speedrunning videos on YouTube. My favorite game is Baldur's Gate 3, and my favorite manga is Haikyuu.
+            I like playing tabletop and video games, reading, and binge watching camping videos on YouTube. My favorite game is Baldur's Gate 3, and my favorite manga is Haikyuu.
           </p>
+          <p>
+            If you want to get in touch, here are some links!
+          </p>
+          <ul className="list-disc list-inside">
+            <li><a className="link" href="https://www.linkedin.com/in/bryanjhdang/" target="_blank">LinkedIn</a></li>
+            <li><a className="link" href="mailto:bda37@sfu.ca">Email</a></li>  
+          </ul>
         </div>
-        <img src={ProfileImg} alt="Bryan Profile Picture" className="w-80 object-cover pt-10 sm:pt-20 lg:pt-0" />
+        <img src={ProfileImg} alt="Bryan Profile Picture" className="w-64 h-72 object-cover pt-10 sm:pt-20 lg:pt-0" />
       </div>
     </div>
   )

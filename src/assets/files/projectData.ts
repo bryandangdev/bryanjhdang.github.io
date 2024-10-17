@@ -6,7 +6,7 @@ import PastYourPeakImage from "../images/projects/past-your-peak.png"
 export const projectData = [
   {
     "name": "Paws",
-    "description": "A time tracking web app to keep track of all your tasks and log them. Has productivity features like a to-do list, studying with others, and an economy to buy cute cat GIFs (link to GitHub repo).",
+    "description": "A time tracking web app to keep track of all your tasks and log them. Has productivity features like a to-do list, studying with others, and an economy to buy cute cat GIFs.",
     "imageLink": PawsImage,
     "projectLink": "https://github.com/bryanjhdang/paws",
     "githubLink": "https://github.com/bryanjhdang/paws",
