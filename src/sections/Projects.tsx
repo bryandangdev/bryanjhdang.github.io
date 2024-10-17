@@ -59,7 +59,7 @@ function Project({ project }: { project: ProjectInfo }) {
 export default function Projects() {
   return (
     <div id="projects" className="pt-20 pb-20 border-none">
-      <SectionTitle title="Some Projects" />
+      <SectionTitle title="Projects" />
       <div className="grid grid-cols-1 gap-10">
         {projectData.map((project, index) => (
           <Project key={index} project={project} />
