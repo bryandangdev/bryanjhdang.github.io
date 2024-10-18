@@ -1,5 +1,3 @@
-import { Typewriter } from "react-simple-typewriter";
-
 export default function Hero() {
   return (
     <div id="main" className="pt-14 sm:pt-32 pb-20 sm:pb-60 border-none">
