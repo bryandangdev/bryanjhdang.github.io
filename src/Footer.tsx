@@ -16,7 +16,7 @@ function Footer({
             href={linkedInUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#F16D34] hover:text-[#FF986A] underline"
+            className="text-[#F16D34] hover:text-[#FF986A] hover:underline"
           >
             {linkedInText}
           </a>

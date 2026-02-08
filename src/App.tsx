@@ -1,7 +1,9 @@
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./Footer";
-import Hero from "./Hero";
+import Hero from "./pages/home/Hero";
+import Projects from "./pages/home/Projects";
+import GamesPlayed from "./pages/home/GamesPlayed";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -14,10 +16,14 @@ function Layout({ children }: { children: React.ReactNode }) {
 
 function Home() {
   return (
-    <Hero
-      title="Hey there, I'm Bryan"
-      subtitle="Welcome! Come see what I'm up to :D"
-    />
+    <>
+      <Hero
+        title="Hey there, I'm Bryan"
+        subtitle="Welcome! Come see what I'm up to :D"
+      />
+      <Projects />
+      <GamesPlayed />
+    </>
   );
 }
 

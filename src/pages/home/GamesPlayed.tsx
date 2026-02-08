@@ -1,0 +1,83 @@
+import { useEffect, useRef, useState } from "react";
+
+interface GamesPlayed {
+  title: string;
+  description: string;
+}
+
+const gamesPlayed: GamesPlayed[] = [
+  {
+    title: "Baldur's Gate 3",
+    description:
+      "My favorite game of all time. I think this is genuinely one of the most comprehensive and impressive gaming experiences I have ever had in my life. From the voice acting to the music to the combat. Peak.",
+  },
+  {
+    title: "Tunic",
+    description:
+      "Fun little game. Lowkey abandoned it, but I swear I'll get back to it.",
+  },
+];
+
+export default function GamesPlayed() {
+  const [open, setOpen] = useState(true);
+  const contentRef = useRef<HTMLUListElement>(null);
+  const [maxHeight, setMaxHeight] = useState<number>(0);
+
+  useEffect(() => {
+    const el = contentRef.current;
+    if (!el) return;
+
+    setMaxHeight(open ? el.scrollHeight : 0);
+  }, [open]);
+
+  useEffect(() => {
+    const onResize = () => {
+      const el = contentRef.current;
+      if (!el) return;
+      if (open) setMaxHeight(el.scrollHeight);
+    };
+
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [open]);
+
+  return (
+    <section className="px-8 py-4">
+      <div className="max-w-3xl mx-auto">
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="w-full flex items-center gap-3 text-left mb-6"
+          aria-expanded={open}
+        >
+          <span
+            className={`text-2xl select-none transition-transform duration-200 ${
+              open ? "rotate-90" : "rotate-0"
+            }`}
+            aria-hidden="true"
+          >
+            &gt;
+          </span>
+
+          <h2 className="text-3xl md:text-4xl font-bold">
+            The games I'm playing!
+          </h2>
+        </button>
+
+        <div
+          className="overflow-hidden transition-[max-height] duration-300 ease-in-out"
+          style={{ maxHeight }}
+        >
+          <ul ref={contentRef} className="space-y-8">
+            {gamesPlayed.map((p, index) => (
+              <li key={index} className="rounded-xl px-12 text-[#547792]">
+                <h3 className="text-2xl font-bold italic mb-2">{p.title}</h3>
+                <p className="text-xl opacity-80">{p.description}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
