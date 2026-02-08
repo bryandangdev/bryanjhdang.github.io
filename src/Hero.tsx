@@ -13,7 +13,7 @@ function Hero({
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
           {title}
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl">
+        <p className="text-2xl md:text-2xl lg:text-2xl">
           {subtitle}
         </p>
       </div>
