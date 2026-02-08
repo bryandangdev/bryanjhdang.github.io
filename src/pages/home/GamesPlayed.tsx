@@ -81,3 +81,46 @@ export default function GamesPlayed() {
     </section>
   );
 }
+
+// OLD
+
+// interface GamesPlayed {
+//   title: string;
+//   description: string;
+// }
+
+// const gamesPlayed: GamesPlayed[] = [
+//   {
+//     title: "Baldur's Gate 3",
+//     description: "My favorite game of all time. I think this is genuinely one of the most comprehensive and impressive gaming experiences I have ever had in my life. From the voice acting to the music to the combat. Peak."
+//   },
+//   {
+//     title: "Tunic",
+//     description: "Fun little game. Lowkey abandoned it, but I swear I'll get back to it."
+//   }
+// ];
+
+// export default function GamesPlayed() {
+//   return (
+//     <section className="px-8 py-8">
+//       <div className="max-w-3xl mx-auto">
+//         <h2 className="text-3xl md:text-4xl font-bold mb-6">
+//           The games I'm playing!
+//         </h2>
+
+//         <ul className="space-y-8">
+//           {gamesPlayed.map((p, index) => (
+//             <li key={index} className="rounded-xl px-12 text-[#547792]">
+//               <h3 className="text-2xl font-bold italic mb-2 ">
+//                 {p.title}
+//               </h3>
+//               <p className="text-xl opacity-80">
+//                 {p.description}
+//               </p>
+//             </li>
+//           ))}
+//         </ul>
+//       </div>
+//     </section>
+//   );
+// }
