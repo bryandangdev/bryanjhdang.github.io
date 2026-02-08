@@ -1,32 +1,60 @@
-import Header from './sections/Header'
-import Hero from './sections/Hero'
-import About from './sections/About'
-import Projects from './sections/Projects'
-import Footer from './sections/Footer'
-import './index.scss'
+import "./index.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./Footer";
+import Hero from "./pages/home/Hero";
+import Projects from "./pages/home/Projects";
+import GamesPlayed from "./pages/home/GamesPlayed";
 
-function App() {
-  const particles = Array.from({ length: 30 }, (_, i) => <div key={i} className="particle"></div>);
-
+function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      {/* <div id="particle-container">
-        {particles}
-      </div> */}
-
-      <div className='flex flex-col items-center justify-center flex-container'>
-        <div className='w-full px-8 md:px-24 max-w-5xl 3xl:max-w-7xl bg-[#2f3335] text-[#e9efe9] content-container'>
-
-          {/* px-10 sm:px-20 lg:px-40 xl:px-60 */}
-          <Header />
-          <Hero />
-          <About />
-          <Projects />
-          <Footer />
-        </div>
-      </div>
-    </>
-  )
+    <div className="min-h-screen flex flex-col font-cardenio text-[#213448] font-bold bg-[#EAE0CF]">
+      <main className="flex-1">{children}</main>
+      <Footer linkedInUrl="https://www.linkedin.com/in/bryanjhdang" />
+    </div>
+  );
 }
 
-export default App
+function Home() {
+  return (
+    <>
+      <Hero
+        title="Hey there, I'm Bryan"
+        subtitle="Welcome! Come see what I'm up to :D"
+      />
+      <Projects />
+      <GamesPlayed />
+    </>
+  );
+}
+
+function BlogIndex() {
+  return (
+    <div className="max-w-3xl mx-auto px-8 py-16">
+      <h1 className="text-3xl font-bold">Blog</h1>
+      <p className="text-gray-600 mt-2">Posts will go here.</p>
+    </div>
+  );
+}
+
+function BlogPost() {
+  return (
+    <div className="max-w-3xl mx-auto px-8 py-16">
+      <h1 className="text-3xl font-bold">Post</h1>
+      <p className="text-gray-600 mt-2">Single post view.</p>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+}
