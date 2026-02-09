@@ -16,6 +16,10 @@
   font-style: normal;
 }
 
+html, body {
+  background-color: #EAE0CF;
+}
+
 html {
   font-size: 18px;
 }

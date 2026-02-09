@@ -7,7 +7,7 @@ import GamesPlayed from "./pages/home/GamesPlayed";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col font-cardenio text-[#213448] font-bold bg-[#EAE0CF]">
+    <div className="min-h-screen flex flex-col font-cardenio text-[#213448] font-bold">
       <main className="flex-1">{children}</main>
       <Footer linkedInUrl="https://www.linkedin.com/in/bryanjhdang" />
     </div>
